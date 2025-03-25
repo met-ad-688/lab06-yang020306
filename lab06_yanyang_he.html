@@ -154,11 +154,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>df.printSchema()</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>df.show(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Setting default log level to "WARN".
-To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
-25/03/24 09:17:58 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-                                                                                25/03/24 09:18:06 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
-                                                                                </code></pre>
+<pre><code>Setting default log level to "</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>root
@@ -350,9 +346,6 @@ only showing top 5 rows
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>                  width<span class="op">=</span><span class="dv">1000</span>,</span>
 <span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>                  height<span class="op">=</span><span class="dv">600</span>)</span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"_output/figure-q1.svg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>                                                                                </code></pre>
-</div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -390,26 +383,23 @@ only showing top 5 rows
 <li><strong>Explanation:</strong> Write two sentences about what the graph reveals.</li>
 </ul>
 <div id="cell-8" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 2nd question here</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> df.select(<span class="st">"NAICS2_NAME"</span>, <span class="st">"SALARY_FROM"</span>)<span class="op">\</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        .<span class="bu">filter</span>(df.SALARY_FROM <span class="op">&gt;</span> <span class="dv">0</span>)<span class="op">\</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        .toPandas()</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.box(pdf, x<span class="op">=</span><span class="st">"NAICS2_NAME"</span>, y<span class="op">=</span><span class="st">"SALARY_FROM"</span>,</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>             title<span class="op">=</span><span class="st">"Salary Distribution by Industry"</span>,</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>             color<span class="op">=</span><span class="st">"NAICS2_NAME"</span>,</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>             color_discrete_sequence<span class="op">=</span>px.colors.qualitative.Prism,</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>             labels<span class="op">=</span>{</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"NAICS2_NAME"</span>: <span class="st">"industry"</span>,</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"SALARY_FROM"</span>: <span class="st">"salary"</span>,</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>             })</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>fig.update_layout(font_family<span class="op">=</span><span class="st">"Times New Roman"</span>,</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>                  title_font_size<span class="op">=</span><span class="dv">20</span>,</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>                  width<span class="op">=</span><span class="dv">1000</span>,</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>                  height<span class="op">=</span><span class="dv">1200</span>)</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"_output/figure-q2.svg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>                                                                                </code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 2nd question here</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> df.select(<span class="st">"NAICS2_NAME"</span>, <span class="st">"SALARY_FROM"</span>)<span class="op">\</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        .<span class="bu">filter</span>(df.SALARY_FROM <span class="op">&gt;</span> <span class="dv">0</span>)<span class="op">\</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        .toPandas()</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.box(pdf, x<span class="op">=</span><span class="st">"NAICS2_NAME"</span>, y<span class="op">=</span><span class="st">"SALARY_FROM"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>             title<span class="op">=</span><span class="st">"Salary Distribution by Industry"</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>             color<span class="op">=</span><span class="st">"NAICS2_NAME"</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>             color_discrete_sequence<span class="op">=</span>px.colors.qualitative.Prism,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>             labels<span class="op">=</span>{</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"NAICS2_NAME"</span>: <span class="st">"industry"</span>,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"SALARY_FROM"</span>: <span class="st">"salary"</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>             })</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>fig.update_layout(font_family<span class="op">=</span><span class="st">"Times New Roman"</span>,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>                  title_font_size<span class="op">=</span><span class="dv">20</span>,</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>                  width<span class="op">=</span><span class="dv">1000</span>,</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>                  height<span class="op">=</span><span class="dv">1200</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"_output/figure-q2.svg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -443,28 +433,25 @@ only showing top 5 rows
 <li><strong>Explanation:</strong> Write two sentences about what the graph reveals.</li>
 </ul>
 <div id="cell-11" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 3rd question here</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> df.select(<span class="st">"POSTED"</span>)<span class="op">\</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        .<span class="bu">filter</span>(df.POSTED.isNotNull())<span class="op">\</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        .groupBy(<span class="st">"POSTED"</span>)<span class="op">\</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        .count()<span class="op">\</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        .orderBy(<span class="st">"POSTED"</span>)<span class="op">\</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>        .toPandas()</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.line(pdf, x<span class="op">=</span><span class="st">"POSTED"</span>, y<span class="op">=</span><span class="st">"count"</span>,</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>             title<span class="op">=</span><span class="st">"Job Posting Trends Over Time"</span>,</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>             color_discrete_sequence<span class="op">=</span>px.colors.qualitative.Prism,</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>             labels<span class="op">=</span>{</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"POSTED"</span>: <span class="st">"Posted Time"</span>,</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"count"</span>: <span class="st">"Number of Job Postings"</span>,</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>             })</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>fig.update_layout(font_family<span class="op">=</span><span class="st">"Times New Roman"</span>,</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>                  title_font_size<span class="op">=</span><span class="dv">20</span>,</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>                  width<span class="op">=</span><span class="dv">1200</span>,</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>                  height<span class="op">=</span><span class="dv">600</span>)</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"_output/figure-q3.svg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>                                                                                </code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 3rd question here</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> df.select(<span class="st">"POSTED"</span>)<span class="op">\</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        .<span class="bu">filter</span>(df.POSTED.isNotNull())<span class="op">\</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        .groupBy(<span class="st">"POSTED"</span>)<span class="op">\</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        .count()<span class="op">\</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        .orderBy(<span class="st">"POSTED"</span>)<span class="op">\</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        .toPandas()</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.line(pdf, x<span class="op">=</span><span class="st">"POSTED"</span>, y<span class="op">=</span><span class="st">"count"</span>,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>             title<span class="op">=</span><span class="st">"Job Posting Trends Over Time"</span>,</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>             color_discrete_sequence<span class="op">=</span>px.colors.qualitative.Prism,</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>             labels<span class="op">=</span>{</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"POSTED"</span>: <span class="st">"Posted Time"</span>,</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"count"</span>: <span class="st">"Number of Job Postings"</span>,</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>             })</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>fig.update_layout(font_family<span class="op">=</span><span class="st">"Times New Roman"</span>,</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>                  title_font_size<span class="op">=</span><span class="dv">20</span>,</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>                  width<span class="op">=</span><span class="dv">1200</span>,</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>                  height<span class="op">=</span><span class="dv">600</span>)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"_output/figure-q3.svg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -499,29 +486,26 @@ only showing top 5 rows
 <li><strong>Explanation:</strong> Write two sentences about what the graph reveals.</li>
 </ul>
 <div id="cell-14" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 4th question here</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> df.select(<span class="st">"TITLE_NAME"</span>)<span class="op">\</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        .<span class="bu">filter</span>(df.TITLE_NAME.isNotNull())<span class="op">\</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>        .groupBy(<span class="st">"TITLE_NAME"</span>)<span class="op">\</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>        .count()<span class="op">\</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>        .orderBy(<span class="st">"count"</span>, ascending<span class="op">=</span><span class="va">False</span>)<span class="op">\</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        .limit(<span class="dv">10</span>)<span class="op">\</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>        .toPandas()</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.bar(pdf, x<span class="op">=</span><span class="st">"TITLE_NAME"</span>, y<span class="op">=</span><span class="st">"count"</span>,</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>             title<span class="op">=</span><span class="st">"Top 10 Job Titles"</span>,</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>             color_discrete_sequence<span class="op">=</span>px.colors.qualitative.Prism,</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>             labels<span class="op">=</span>{</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"TITLE_NAME"</span>: <span class="st">"Job Title"</span>,</span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"count"</span>: <span class="st">"Job Count"</span>,</span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>             })</span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>fig.update_layout(font_family<span class="op">=</span><span class="st">"Times New Roman"</span>,</span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>                  title_font_size<span class="op">=</span><span class="dv">20</span>,</span>
-<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>                  width<span class="op">=</span><span class="dv">1000</span>,</span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>                  height<span class="op">=</span><span class="dv">600</span>)</span>
-<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"_output/figure-q4.svg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>                                                                                </code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 4th question here</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> df.select(<span class="st">"TITLE_NAME"</span>)<span class="op">\</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        .<span class="bu">filter</span>(df.TITLE_NAME.isNotNull())<span class="op">\</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>        .groupBy(<span class="st">"TITLE_NAME"</span>)<span class="op">\</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>        .count()<span class="op">\</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        .orderBy(<span class="st">"count"</span>, ascending<span class="op">=</span><span class="va">False</span>)<span class="op">\</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        .limit(<span class="dv">10</span>)<span class="op">\</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        .toPandas()</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.bar(pdf, x<span class="op">=</span><span class="st">"TITLE_NAME"</span>, y<span class="op">=</span><span class="st">"count"</span>,</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>             title<span class="op">=</span><span class="st">"Top 10 Job Titles"</span>,</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>             color_discrete_sequence<span class="op">=</span>px.colors.qualitative.Prism,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>             labels<span class="op">=</span>{</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"TITLE_NAME"</span>: <span class="st">"Job Title"</span>,</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"count"</span>: <span class="st">"Job Count"</span>,</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>             })</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>fig.update_layout(font_family<span class="op">=</span><span class="st">"Times New Roman"</span>,</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>                  title_font_size<span class="op">=</span><span class="dv">20</span>,</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>                  width<span class="op">=</span><span class="dv">1000</span>,</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>                  height<span class="op">=</span><span class="dv">600</span>)</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"_output/figure-q4.svg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -555,27 +539,24 @@ only showing top 5 rows
 <li><strong>Explanation:</strong> Write two sentences about what the graph reveals.</li>
 </ul>
 <div id="cell-17" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 5th question here</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> df.select(<span class="st">"REMOTE_TYPE_NAME"</span>)<span class="op">\</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        .<span class="bu">filter</span>(df.REMOTE_TYPE_NAME.isNotNull())<span class="op">\</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        .groupBy(<span class="st">"REMOTE_TYPE_NAME"</span>)<span class="op">\</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        .count()<span class="op">\</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        .toPandas()</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.pie(pdf, names<span class="op">=</span><span class="st">"REMOTE_TYPE_NAME"</span>, values<span class="op">=</span><span class="st">"count"</span>,</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>             title<span class="op">=</span><span class="st">"Remote v.s. On-Site Jobs"</span>,</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>             color_discrete_sequence<span class="op">=</span>px.colors.qualitative.Prism,</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>             labels<span class="op">=</span>{</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"REMOTE_TYPE_NAME"</span>: <span class="st">"Remote/On-Site Type"</span>,</span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"count"</span>: <span class="st">"Job Count"</span>,</span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>             })</span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>fig.update_layout(font_family<span class="op">=</span><span class="st">"Times New Roman"</span>,</span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>                  title_font_size<span class="op">=</span><span class="dv">20</span>,</span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>                  width<span class="op">=</span><span class="dv">800</span>,</span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>                  height<span class="op">=</span><span class="dv">600</span>)</span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"_output/figure-q5.svg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>                                                                                </code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 5th question here</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> df.select(<span class="st">"REMOTE_TYPE_NAME"</span>)<span class="op">\</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        .<span class="bu">filter</span>(df.REMOTE_TYPE_NAME.isNotNull())<span class="op">\</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        .groupBy(<span class="st">"REMOTE_TYPE_NAME"</span>)<span class="op">\</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        .count()<span class="op">\</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        .toPandas()</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.pie(pdf, names<span class="op">=</span><span class="st">"REMOTE_TYPE_NAME"</span>, values<span class="op">=</span><span class="st">"count"</span>,</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>             title<span class="op">=</span><span class="st">"Remote v.s. On-Site Jobs"</span>,</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>             color_discrete_sequence<span class="op">=</span>px.colors.qualitative.Prism,</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>             labels<span class="op">=</span>{</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"REMOTE_TYPE_NAME"</span>: <span class="st">"Remote/On-Site Type"</span>,</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"count"</span>: <span class="st">"Job Count"</span>,</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>             })</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>fig.update_layout(font_family<span class="op">=</span><span class="st">"Times New Roman"</span>,</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>                  title_font_size<span class="op">=</span><span class="dv">20</span>,</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>                  width<span class="op">=</span><span class="dv">800</span>,</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>                  height<span class="op">=</span><span class="dv">600</span>)</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"_output/figure-q5.svg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -611,41 +592,38 @@ only showing top 5 rows
 <li><strong>Explanation:</strong> Write two sentences about what the graph reveals.</li>
 </ul>
 <div id="cell-20" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ast</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> df.select(<span class="st">"SKILLS_NAME"</span>, <span class="st">"NAICS_2022_2"</span>)<span class="op">\</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>        .<span class="bu">filter</span>(df.SKILLS.isNotNull())<span class="op">\</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>        .toPandas()</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>pdf[<span class="st">"SKILLS_NAME"</span>] <span class="op">=</span> pdf[<span class="st">"SKILLS_NAME"</span>].<span class="bu">apply</span>(ast.literal_eval)</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> pdf.explode(<span class="st">"SKILLS_NAME"</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>skill_industry_count <span class="op">=</span> pdf.groupby([<span class="st">"NAICS_2022_2"</span>, <span class="st">"SKILLS_NAME"</span>]).size().reset_index(name<span class="op">=</span><span class="st">'count'</span>)</span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>skill_industry_count <span class="op">=</span> skill_industry_count<span class="op">\</span></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    .sort_values([<span class="st">'NAICS_2022_2'</span>, <span class="st">'count'</span>], ascending<span class="op">=</span>[<span class="va">True</span>, <span class="va">False</span>])<span class="op">\</span></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    .groupby(<span class="st">'NAICS_2022_2'</span>)<span class="op">\</span></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    .head(<span class="dv">3</span>)<span class="op">\</span></span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    .reset_index(drop<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>                                                                                </code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ast</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> df.select(<span class="st">"SKILLS_NAME"</span>, <span class="st">"NAICS2_NAME"</span>)<span class="op">\</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>        .<span class="bu">filter</span>(df.SKILLS.isNotNull())<span class="op">\</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>        .toPandas()</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>pdf[<span class="st">"SKILLS_NAME"</span>] <span class="op">=</span> pdf[<span class="st">"SKILLS_NAME"</span>].<span class="bu">apply</span>(ast.literal_eval)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> pdf.explode(<span class="st">"SKILLS_NAME"</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>skill_industry_count <span class="op">=</span> pdf.groupby([<span class="st">"NAICS2_NAME"</span>, <span class="st">"SKILLS_NAME"</span>]).size().reset_index(name<span class="op">=</span><span class="st">'count'</span>)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>skill_industry_count <span class="op">=</span> skill_industry_count<span class="op">\</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    .sort_values([<span class="st">'NAICS2_NAME'</span>, <span class="st">'count'</span>], ascending<span class="op">=</span>[<span class="va">True</span>, <span class="va">False</span>])<span class="op">\</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    .groupby(<span class="st">'NAICS2_NAME'</span>)<span class="op">\</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    .head(<span class="dv">3</span>)<span class="op">\</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    .reset_index(drop<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="cell-21" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 6th question here</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.bar(skill_industry_count, x<span class="op">=</span><span class="st">"NAICS_2022_2"</span>, y<span class="op">=</span><span class="st">"count"</span>,</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>             title<span class="op">=</span><span class="st">"Skill Demand Analysis by Industry"</span>,</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>             color<span class="op">=</span><span class="st">"SKILLS_NAME"</span>,</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>             color_discrete_sequence<span class="op">=</span>px.colors.qualitative.Prism,</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>             text<span class="op">=</span><span class="st">"SKILLS_NAME"</span>,</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>             labels<span class="op">=</span>{</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"NAICS_2022_2"</span>: <span class="st">"Industry"</span>,</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"count"</span>: <span class="st">"Job Count"</span>,</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>             })</span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>fig.update_layout(font_family<span class="op">=</span><span class="st">"Times New Roman"</span>,</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>                  title_font_size<span class="op">=</span><span class="dv">20</span>,</span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>                  width<span class="op">=</span><span class="dv">1200</span>,</span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>                  height<span class="op">=</span><span class="dv">1000</span>)</span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"_output/figure-q6.svg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 6th question here</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.bar(skill_industry_count, x<span class="op">=</span><span class="st">"NAICS2_NAME"</span>, y<span class="op">=</span><span class="st">"count"</span>,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>             title<span class="op">=</span><span class="st">"Skill Demand Analysis by Industry"</span>,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>             color<span class="op">=</span><span class="st">"SKILLS_NAME"</span>,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>             color_discrete_sequence<span class="op">=</span>px.colors.qualitative.Prism,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>             text<span class="op">=</span><span class="st">"SKILLS_NAME"</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>             labels<span class="op">=</span>{</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"NAICS2_NAME"</span>: <span class="st">"Industry"</span>,</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"count"</span>: <span class="st">"Job Count"</span>,</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>             })</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>fig.update_layout(font_family<span class="op">=</span><span class="st">"Times New Roman"</span>,</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>                  title_font_size<span class="op">=</span><span class="dv">20</span>,</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>                  width<span class="op">=</span><span class="dv">1200</span>,</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>                  height<span class="op">=</span><span class="dv">1000</span>)</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"_output/figure-q6.svg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -655,7 +633,7 @@ only showing top 5 rows
 </div>
 <p>Insights from the data:</p>
 <ol type="1">
-<li>Communications is almost always the most needed skill in every industry, showing the importance of soft-skills</li>
+<li>Management and Communications are the most needed skill in every industry, showing the importance of soft-skills</li>
 <li>Data Analysis is highly favorable across many industries</li>
 </ol>
 </section>
@@ -679,24 +657,22 @@ only showing top 5 rows
 </ul></li>
 <li><strong>Explanation:</strong> Write two sentences about what the graph reveals.</li>
 </ul>
-<div id="cell-24" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 7th question here</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> median, <span class="bu">max</span>, count</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> df.select(<span class="st">"ONET_NAME"</span>, <span class="st">"SALARY"</span>)<span class="op">\</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>        .groupBy(<span class="st">"ONET_NAME"</span>)<span class="op">\</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>        .agg(median(<span class="st">"SALARY"</span>).alias(<span class="st">"MEDIAN_SALARY"</span>), count(<span class="st">"*"</span>).alias(<span class="st">"JOB_COUNT"</span>))<span class="op">\</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>        .toPandas()</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="co">this data is problematic,</span></span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="co">we only have data for one ONET_NAME (Business Intelligence Analysts)</span></span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>pdf.head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>                                                                                </code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="16">
+<p><strong>Correction:</strong> For Question 7, the ONET_NAME has only one possible value, Business Intelligence Analysts. This means the result bubble chart contains only one bubble. - you can use the columns - “SALARY_FROM”, “SALARY_TO”, “LOT_V6_OCCUPATION_NAME”, Average_Salary”</p>
+<p>from Prof.&nbsp;Nakul Padalkar</p>
+<div id="cell-25" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 7th question here</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> median, count, col, when</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> df.select(<span class="st">"LOT_V6_OCCUPATION_NAME"</span>, <span class="st">"SALARY"</span>, <span class="st">"SALARY_FROM"</span>, <span class="st">"SALARY_TO"</span>)<span class="op">\</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>        .withColumn(<span class="st">"SALARY"</span>,when(col(<span class="st">"SALARY"</span>).isNull(), (col(<span class="st">"SALARY_FROM"</span>)<span class="op">+</span>col(<span class="st">"SALARY_TO"</span>)) <span class="op">/</span> <span class="fl">2.0</span>).otherwise(col(<span class="st">"SALARY"</span>)))<span class="op">\</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>        .select(<span class="st">"LOT_V6_OCCUPATION_NAME"</span>, <span class="st">"SALARY"</span>)<span class="op">\</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>        .<span class="bu">filter</span>(df.SALARY.isNotNull())<span class="op">\</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>        .groupBy(<span class="st">"LOT_V6_OCCUPATION_NAME"</span>)<span class="op">\</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>        .agg(median(<span class="st">"SALARY"</span>).alias(<span class="st">"MEDIAN_SALARY"</span>), count(<span class="st">"*"</span>).alias(<span class="st">"JOB_COUNT"</span>))<span class="op">\</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>        .toPandas()</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>pdf.head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
 <div>
 
 
@@ -704,7 +680,7 @@ only showing top 5 rows
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">ONET_NAME</th>
+<th data-quarto-table-cell-role="th">LOT_V6_OCCUPATION_NAME</th>
 <th data-quarto-table-cell-role="th">MEDIAN_SALARY</th>
 <th data-quarto-table-cell-role="th">JOB_COUNT</th>
 </tr>
@@ -712,15 +688,39 @@ only showing top 5 rows
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>Business Intelligence Analysts</td>
-<td>116300.0</td>
-<td>72454</td>
+<td>Business / Management Analyst</td>
+<td>93650.0</td>
+<td>1640</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>None</td>
-<td>NaN</td>
-<td>44</td>
+<td>Business Intelligence Analyst</td>
+<td>125900.0</td>
+<td>12402</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Market Research Analyst</td>
+<td>94500.0</td>
+<td>65</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Computer Systems Engineer / Architect</td>
+<td>157600.0</td>
+<td>3321</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Data / Data Mining Analyst</td>
+<td>95250.0</td>
+<td>13286</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>Clinical Analyst / Clinical Documentation and ...</td>
+<td>89440.0</td>
+<td>94</td>
 </tr>
 </tbody>
 </table>
@@ -728,33 +728,33 @@ only showing top 5 rows
 </div>
 </div>
 </div>
-<div id="cell-25" class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.scatter(pdf, x<span class="op">=</span><span class="st">"ONET_NAME"</span>, y<span class="op">=</span><span class="st">"MEDIAN_SALARY"</span>,</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>                 size<span class="op">=</span><span class="st">"JOB_COUNT"</span>,</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>                 color<span class="op">=</span><span class="st">"MEDIAN_SALARY"</span>,</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>                 title<span class="op">=</span><span class="st">"Median Salary by ONET Occupation Type"</span>,</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>                 labels<span class="op">=</span>{</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"ONET_NAME"</span>: <span class="st">"ONET Occupation Type"</span>,</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"MEDIAN_SALARY"</span>: <span class="st">"median salary"</span>,</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"JOB_COUNT"</span>: <span class="st">"number of jobs"</span>,</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>                 })</span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>fig.update_layout(font_family<span class="op">=</span><span class="st">"Times New Roman"</span>,</span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>                  title_font_size<span class="op">=</span><span class="dv">20</span>,</span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>                  width<span class="op">=</span><span class="dv">1200</span>,</span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>                  height<span class="op">=</span><span class="dv">1000</span>)</span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"_output/figure-q7.svg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-26" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.scatter(pdf, x<span class="op">=</span><span class="st">"LOT_V6_OCCUPATION_NAME"</span>, y<span class="op">=</span><span class="st">"MEDIAN_SALARY"</span>,</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>                 size<span class="op">=</span><span class="st">"JOB_COUNT"</span>,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                 color<span class="op">=</span><span class="st">"MEDIAN_SALARY"</span>,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                 title<span class="op">=</span><span class="st">"Median Salary by Occupation Type"</span>,</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>                 labels<span class="op">=</span>{</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"LOT_V6_OCCUPATION_NAME"</span>: <span class="st">"Occupation Type"</span>,</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"MEDIAN_SALARY"</span>: <span class="st">"median salary"</span>,</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"JOB_COUNT"</span>: <span class="st">"number of jobs"</span>,</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>                 })</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>fig.update_layout(font_family<span class="op">=</span><span class="st">"Times New Roman"</span>,</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>                  title_font_size<span class="op">=</span><span class="dv">20</span>,</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>                  width<span class="op">=</span><span class="dv">800</span>,</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>                  height<span class="op">=</span><span class="dv">600</span>)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"_output/figure-q7.svg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="_output/figure-q7.svg" class="img-fluid figure-img"></p>
-<figcaption>Median Salary by ONET Occupation Type</figcaption>
+<figcaption>Median Salary by Occupation Type</figcaption>
 </figure>
 </div>
 <p>Insights from the data:</p>
 <ol type="1">
-<li>the dataset contains only one ONET Occupation Type, that is Business Intelligence Analysts</li>
-<li>the median salary of Business Intelligence Analysts is about 116k</li>
+<li>Computer Systems Engineer / Architect is the Occupation Type offering the highest median salary</li>
+<li>Business Intelligence Analyst jobs are of high demand and relatively high salary</li>
 </ol>
 </section>
 <section id="career-pathway-trends-sankey-diagram" class="level1" data-number="8">
@@ -777,21 +777,22 @@ only showing top 5 rows
 </ul></li>
 <li><strong>Explanation:</strong> Write two sentences about what the graph reveals.</li>
 </ul>
-<div id="cell-28" class="cell" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 8th question here</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> df.groupBy(<span class="st">"SOC_2021_2_NAME"</span>, <span class="st">"SOC_2021_3_NAME"</span>)<span class="op">\</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>        .count()<span class="op">\</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>        .toPandas()</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co">this data is problematic,</span></span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="co">we only have data for one SOC_2021_2_NAME and one SOC_2021_3_NAME</span></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>pdf.head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>                                                                                </code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="26">
+<p><strong>Correction:</strong></p>
+<p>you can use the columns - “SALARY_FROM”, “SALARY_TO”, “LOT_V6_OCCUPATION_NAME”, Average_Salary” For Q 8 as well these three columns will work nicely.</p>
+<p>from Prof.&nbsp;Nakul Padalkar</p>
+<div id="cell-30" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code for 8th question here</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.sql.functions <span class="im">import</span> approx_percentile</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>pdf <span class="op">=</span> df.select(<span class="st">"LOT_V6_OCCUPATION_NAME"</span>, <span class="st">"SALARY"</span>)<span class="op">\</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>        .<span class="bu">filter</span>(df.SALARY.isNotNull())<span class="op">\</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>        .groupBy(<span class="st">"LOT_V6_OCCUPATION_NAME"</span>)<span class="op">\</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>        .agg(approx_percentile(<span class="st">"SALARY"</span>, <span class="fl">0.25</span>).alias(<span class="st">"25%"</span>),<span class="op">\</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>             approx_percentile(<span class="st">"SALARY"</span>, <span class="fl">0.50</span>).alias(<span class="st">"50%"</span>),<span class="op">\</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>             approx_percentile(<span class="st">"SALARY"</span>, <span class="fl">0.75</span>).alias(<span class="st">"75%"</span>))<span class="op">\</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>        .toPandas()</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>pdf.head(<span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
 <div>
 
 
@@ -799,23 +800,54 @@ only showing top 5 rows
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">SOC_2021_2_NAME</th>
-<th data-quarto-table-cell-role="th">SOC_2021_3_NAME</th>
-<th data-quarto-table-cell-role="th">count</th>
+<th data-quarto-table-cell-role="th">LOT_V6_OCCUPATION_NAME</th>
+<th data-quarto-table-cell-role="th">25%</th>
+<th data-quarto-table-cell-role="th">50%</th>
+<th data-quarto-table-cell-role="th">75%</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>None</td>
-<td>None</td>
-<td>44</td>
+<td>Business / Management Analyst</td>
+<td>71150</td>
+<td>93650</td>
+<td>123000</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>Computer and Mathematical Occupations</td>
-<td>Mathematical Science Occupations</td>
-<td>72454</td>
+<td>Business Intelligence Analyst</td>
+<td>100300</td>
+<td>125900</td>
+<td>150978</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Market Research Analyst</td>
+<td>89107</td>
+<td>94500</td>
+<td>106879</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Computer Systems Engineer / Architect</td>
+<td>136950</td>
+<td>157600</td>
+<td>187200</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Data / Data Mining Analyst</td>
+<td>72829</td>
+<td>95244</td>
+<td>123800</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>Clinical Analyst / Clinical Documentation and ...</td>
+<td>75550</td>
+<td>89440</td>
+<td>105400</td>
 </tr>
 </tbody>
 </table>
@@ -823,40 +855,47 @@ only showing top 5 rows
 </div>
 </div>
 </div>
-<div id="cell-29" class="cell" data-execution_count="36">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># reference: https://plotly.com/python/sankey-diagram/</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> pdf[<span class="st">'SOC_2021_2_NAME'</span>].unique().tolist() <span class="op">+</span> pdf[<span class="st">'SOC_2021_3_NAME'</span>].unique().tolist()</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>label_to_index <span class="op">=</span> {label: index <span class="cf">for</span> index, label <span class="kw">in</span> <span class="bu">enumerate</span>(labels)}</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>source <span class="op">=</span> pdf[<span class="st">'SOC_2021_2_NAME'</span>].<span class="bu">map</span>(label_to_index)</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>target <span class="op">=</span> pdf[<span class="st">'SOC_2021_3_NAME'</span>].<span class="bu">map</span>(label_to_index)</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> pdf[<span class="st">'count'</span>]</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> go.Figure(data<span class="op">=</span>[go.Sankey(</span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>    node<span class="op">=</span><span class="bu">dict</span>(</span>
-<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>        pad<span class="op">=</span><span class="dv">15</span>,</span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>        thickness<span class="op">=</span><span class="dv">20</span>,</span>
-<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>        line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">"black"</span>, width<span class="op">=</span><span class="fl">0.5</span>),</span>
-<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span><span class="bu">list</span>(pdf[<span class="st">'SOC_2021_2_NAME'</span>].unique()) <span class="op">+</span> <span class="bu">list</span>(pdf[<span class="st">'SOC_2021_3_NAME'</span>].unique()),</span>
-<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span><span class="st">"blue"</span></span>
-<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>    link<span class="op">=</span><span class="bu">dict</span>(</span>
-<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>        source<span class="op">=</span>source,</span>
-<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>        target<span class="op">=</span>target,</span>
-<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>        value<span class="op">=</span>value,</span>
-<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>)])</span>
-<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>fig.update_layout(title_text<span class="op">=</span><span class="st">"Career Pathway Trends Between SOC Occupation Levels"</span>,</span>
-<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a>                  font_size<span class="op">=</span><span class="dv">20</span>,</span>
-<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a>                  font_family<span class="op">=</span><span class="st">"Times New Roman"</span>,</span>
-<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a>                  width<span class="op">=</span><span class="dv">1200</span>,</span>
-<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a>                  height<span class="op">=</span><span class="dv">900</span>)</span>
-<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"_output/figure-q8.svg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-31" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>occupation_names <span class="op">=</span> pdf[<span class="st">"LOT_V6_OCCUPATION_NAME"</span>].tolist()</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(occupation_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<pre><code>6</code></pre>
+</div>
+</div>
+<div id="cell-32" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># reference: https://plotly.com/python/sankey-diagram/</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> pdf[<span class="st">'SOC_2021_2_NAME'</span>].unique().tolist() <span class="op">+</span> pdf[<span class="st">'SOC_2021_3_NAME'</span>].unique().tolist()</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>label_to_index <span class="op">=</span> {label: index <span class="cf">for</span> index, label <span class="kw">in</span> <span class="bu">enumerate</span>(labels)}</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>source <span class="op">=</span> pdf[<span class="st">'SOC_2021_2_NAME'</span>].<span class="bu">map</span>(label_to_index)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>target <span class="op">=</span> pdf[<span class="st">'SOC_2021_3_NAME'</span>].<span class="bu">map</span>(label_to_index)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> pdf[<span class="st">'count'</span>]</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> go.Figure(data<span class="op">=</span>[go.Sankey(</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    node<span class="op">=</span><span class="bu">dict</span>(</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>        pad<span class="op">=</span><span class="dv">15</span>,</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>        thickness<span class="op">=</span><span class="dv">20</span>,</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>        line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">"black"</span>, width<span class="op">=</span><span class="fl">0.5</span>),</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span><span class="bu">list</span>(pdf[<span class="st">'SOC_2021_2_NAME'</span>].unique()) <span class="op">+</span> <span class="bu">list</span>(pdf[<span class="st">'SOC_2021_3_NAME'</span>].unique()),</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span><span class="st">"blue"</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>    link<span class="op">=</span><span class="bu">dict</span>(</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>        source<span class="op">=</span>source,</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>        target<span class="op">=</span>target,</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>        value<span class="op">=</span>value,</span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>)])</span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>fig.update_layout(title_text<span class="op">=</span><span class="st">"Career Pathway Trends Between SOC Occupation Levels"</span>,</span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>                  font_size<span class="op">=</span><span class="dv">20</span>,</span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>                  font_family<span class="op">=</span><span class="st">"Times New Roman"</span>,</span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>                  width<span class="op">=</span><span class="dv">1200</span>,</span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>                  height<span class="op">=</span><span class="dv">900</span>)</span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a>fig.write_image(<span class="st">"_output/figure-q8.svg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
